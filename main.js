@@ -68,8 +68,6 @@ sixes.push(roll);
 //get the average from the rolls
 const mean = getMean(sixes);
 const median = getMedian(sixes);
-//get median
-getMedian(sixes);
 //have the mean reflect on html
 const meanSection = document.querySelector('#d6-rolls-mean')
 meanSection.innerText = mean;
@@ -174,3 +172,6 @@ function getMedian(arr){
 # = Helper Functions - Stretch Goals!
 # ========================================================
 */
+function setSrc() {
+    document.querySelector().src
+}
