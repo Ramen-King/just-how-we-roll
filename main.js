@@ -56,12 +56,53 @@ function setStartingImages() {
 # = Roll Functions
 # ========================================================
 */
+function rollD6() {
+const random = Math.random();
+const range = random * 6;
+const roll = Math.ceil(range);
+sixes.push(roll);
+mean(sixes);
 
+
+
+}
+
+function rollDoubleD6() {
+
+}
+
+function rollD12() {
+
+}
+
+function rollD20() {
+
+}
+
+function resetAllRolls(){
+
+}
 /*
 # ========================================================
 # = Math Functions
 # ========================================================
 */
+function mean(array){
+let sum = 0;
+for(let i = 0; i < arr.length; i++){
+    sum = sum + arr[i];
+    }
+    const mean = sum / array.length;
+    return mean;
+}
+
+function median(arr){
+    const sortedNumbers = arr.sort();
+    const middleIndex = Math.floor(sortedNumbers.length / 2);
+     
+    return sortedNumbers[middleIndex];
+}
+
 
 /*
 # ========================================================

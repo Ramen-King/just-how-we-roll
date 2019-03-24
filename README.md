@@ -16,7 +16,7 @@ Oh, I already used that pun?
 
 Dangit, there just isn't that much to work with here.
 
-#### What steps should I take to get there?
+#### What steps should I take to get there ?
 
 You could try to go without instructions here for a real challenge. Be the star, not a ROLL PLAYER.
 
