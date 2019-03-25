@@ -57,17 +57,13 @@ function setStartingImages() {
 # ========================================================
 */
 function rollD6() {
-//get random number
-const random = Math.random();
-//multiplies math.random() by 6 times 
-const range = random * 6;
-//rounds the number up because math.random does not give you whole numbers
-const roll = Math.ceil(range);
-//put the value of the roll into the corresponding array
+const roll = getRandomRoll(6);
 sixes.push(roll);
 //get the average from the rolls
 const mean = getMean(sixes);
 const median = getMedian(sixes);
+//get median
+getMedian(sixes);
 //have the mean reflect on html
 const meanSection = document.querySelector('#d6-rolls-mean')
 meanSection.innerText = mean;
@@ -76,8 +72,9 @@ const medianSection = document.querySelector('#d6-rolls-median')
 medianSection.innerText = median;
 
 
-
-
+// const d6Roll = document.querySelector('#d6-roll');
+// d6Roll.src = 'images/d6/' + roll + '.png';
+handleImage(roll, '#d6-roll', 'images/d6/');
 
 }
 
@@ -93,7 +90,8 @@ meanSection.innerText = mean;
 const medianSection = document.querySelector('#double-d6-rolls-median');
 medianSection.innerText = median;
 
-
+handleImage(roll1, '#double-d6-roll-1', 'images/d6/');
+handleImage(roll2, '#double-d6-roll-2', 'images/d6/');
 
 
 }
@@ -107,7 +105,7 @@ const meanSection = document.querySelector('#d12-rolls-mean');
 meanSection.innerText = mean;
 const medianSection = document.querySelector('#d12-rolls-median');
 medianSection.innerText = median;
-
+handleImage(roll, '#d12-roll', 'images/numbers/');
 
 }
 
@@ -120,7 +118,7 @@ const meanSection = document.querySelector('#d20-rolls-mean');
 meanSection.innerText = mean;
 const medianSection = document.querySelector('#d20-rolls-median');
 medianSection.innerText = median;
-
+handleImage(roll, '#d20-roll', 'images/numbers/');
 }
 
 function resetAllRolls(){
@@ -138,12 +136,10 @@ function resetAllRolls(){
 */
 //this function provides a random number 
 //from the max value of the die. 
-function getRandomRoll(max){
-    const random = Math.random();
-    const range = random * max;
-    const result = Math.ceil(range);
-
-    return result;
+function getRandomRoll(sides){
+    const random = Math.floor(Math.random() * sides) + 1;
+    
+    return random;
 }
 
 function getMean(arr){
@@ -172,6 +168,12 @@ function getMedian(arr){
 # = Helper Functions - Stretch Goals!
 # ========================================================
 */
-function setSrc() {
-    document.querySelector().src
+function handleImage(roll, selector, directory) {
+   const rolled = document.querySelector(selector);
+   rolled.src = directory + roll + '.png';
+    console.log(`directory: ${directory}`);
+    console.log('roll: ' + roll);
+    console.log('selector: ' + selector);
 }
+// images/d6
+// images/d6/4.png
